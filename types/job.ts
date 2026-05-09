@@ -12,11 +12,11 @@ export type Industry =
 
 export type Job = {
   id: string;
-  notionUrl: string;
   jobTitle: string;
   company: string;
   industry: Industry | null;
   location: string;
+  salary: string | null;
   datePosted: string | null;
   dateFound: string | null;
   highInterest: boolean;

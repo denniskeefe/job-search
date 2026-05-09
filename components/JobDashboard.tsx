@@ -97,6 +97,11 @@ function JobCard({ job }: { job: Job }) {
         )}
       </div>
 
+      {/* Salary */}
+      {job.salary && (
+        <p className="text-sm text-emerald-400 font-medium">{job.salary}</p>
+      )}
+
       {/* Dates */}
       <div className="flex gap-4 text-xs text-gray-500">
         <span>Found {formatDate(job.dateFound)}</span>
@@ -104,8 +109,8 @@ function JobCard({ job }: { job: Job }) {
       </div>
 
       {/* Actions */}
-      <div className="flex gap-2 pt-1 border-t border-gray-700">
-        {job.jobUrl && (
+      {job.jobUrl && (
+        <div className="flex gap-2 pt-1 border-t border-gray-700">
           <a
             href={job.jobUrl}
             target="_blank"
@@ -114,16 +119,8 @@ function JobCard({ job }: { job: Job }) {
           >
             Apply →
           </a>
-        )}
-        <a
-          href={job.notionUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs font-medium text-gray-500 hover:text-gray-300 hover:underline ml-auto"
-        >
-          Notion
-        </a>
-      </div>
+        </div>
+      )}
     </div>
   );
 }
