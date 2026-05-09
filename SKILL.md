@@ -25,6 +25,7 @@ Search each of the following URLs. For each board, also try keyword variations b
 - `"Threat Intelligence Analyst"`
 - `"Digital Intelligence Analyst"`
 - `"Trust and Safety Analyst"`
+- `"Due Diligence Analyst"`
 
 ### Job Boards to Search:
 
