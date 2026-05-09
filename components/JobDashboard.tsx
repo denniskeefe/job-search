@@ -30,6 +30,19 @@ const STATUS_COLORS: Record<string, string> = {
   Offer: "bg-purple-500",
 };
 
+type SalaryBucket = "$50k–$75k" | "$80k–$105k" | "$110k+" | "Not listed";
+
+function salaryBucketOf(salary: string | null): SalaryBucket {
+  if (!salary) return "Not listed";
+  const match = salary.match(/\$?([\d,]+)/);
+  if (!match) return "Not listed";
+  const min = parseInt(match[1].replace(/,/g, ""), 10);
+  if (min >= 110_000) return "$110k+";
+  if (min >= 80_000) return "$80k–$105k";
+  if (min >= 50_000) return "$50k–$75k";
+  return "Not listed";
+}
+
 function formatDate(iso: string | null): string {
   if (!iso) return "—";
   return new Date(iso).toLocaleDateString("en-US", {
@@ -161,6 +174,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
   const [clearance, setClearance] = useState<ClearanceLevel | "all">("all");
   const [highInterestOnly, setHighInterestOnly] = useState(false);
   const [locationFilter, setLocationFilter] = useState<"all" | "Remote" | "Hybrid" | "On-site">("all");
+  const [salaryBucket, setSalaryBucket] = useState<SalaryBucket | "all">("all");
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
@@ -169,6 +183,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
       if (industry !== "all" && j.industry !== industry) return false;
       if (clearance !== "all" && j.clearance !== clearance) return false;
       if (highInterestOnly && !j.highInterest) return false;
+      if (salaryBucket !== "all" && salaryBucketOf(j.salary) !== salaryBucket) return false;
       if (locationFilter !== "all") {
         const loc = j.location.toLowerCase();
         if (locationFilter === "Remote" && !loc.startsWith("remote")) return false;
@@ -185,7 +200,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
       }
       return true;
     });
-  }, [jobs, status, industry, clearance, highInterestOnly, locationFilter, search]);
+  }, [jobs, status, industry, clearance, highInterestOnly, locationFilter, salaryBucket, search]);
 
   const stats = useMemo(() => {
     const total = jobs.length;
@@ -267,6 +282,13 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
             onChange={setLocationFilter}
           />
 
+          <FilterSelect
+            label="Salary"
+            value={salaryBucket}
+            options={["$50k–$75k", "$80k–$105k", "$110k+", "Not listed"]}
+            onChange={setSalaryBucket}
+          />
+
           <label className="flex items-center gap-2 text-sm font-medium text-gray-400 cursor-pointer pb-1.5">
             <input
               type="checkbox"
@@ -277,7 +299,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
             ★ High-interest only
           </label>
 
-          {(status !== "all" || industry !== "all" || clearance !== "all" || highInterestOnly || locationFilter !== "all" || search) && (
+          {(status !== "all" || industry !== "all" || clearance !== "all" || highInterestOnly || locationFilter !== "all" || salaryBucket !== "all" || search) && (
             <button
               onClick={() => {
                 setStatus("all");
@@ -285,6 +307,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
                 setClearance("all");
                 setHighInterestOnly(false);
                 setLocationFilter("all");
+                setSalaryBucket("all");
                 setSearch("");
               }}
               className="text-xs text-gray-600 hover:text-gray-300 pb-1.5 underline"
