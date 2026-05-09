@@ -80,7 +80,11 @@ For each listing found, extract:
 - **Job title**
 - **Company name**
 - **Industry** (e.g. Cybersecurity, Finance/AML, Nonprofit, Tech/Trust & Safety, Law, Media)
-- **Location** (must be Remote + USA)
+- **Location type** — classify as one of:
+  - `Remote` — fully remote, no office requirement
+  - `Hybrid — [State]` — mix of remote and in-office (include the state, e.g. "Hybrid — VA")
+  - `On-site — [State]` — in-office required (include the state, e.g. "On-site — TX")
+  - `Unknown` — location not clearly stated
 - **Date posted**
 - **Salary** (exact figure, range, or "Not listed" if absent)
 - **Brief description** (2–3 sentences)
@@ -89,7 +93,7 @@ For each listing found, extract:
 
 **Filter OUT:**
 - Any job with active US security clearance (TS, TS/SCI, Secret, etc.) as a hard requirement
-- Jobs outside the USA or not remote/hybrid-remote
+- Jobs outside the USA
 - Any URL already present in the seen-jobs log from Step 1
 
 **Include if salary is "Not listed"** — do not exclude jobs just because no salary is shown; flag them clearly so the user can research compensation separately.
@@ -148,6 +152,7 @@ If zero new jobs were found after deduplication, still send the email with subje
 
 ### ⭐ High-Interest Roles
 1. [Job Title] — [Company] | [Industry] | Posted: [date]
+   Location: [Remote | Hybrid — State | On-site — State | Unknown]
    Salary: [amount or "Not listed"]
    [2-3 sentence description]
    Clearance: None/Preferred/Unknown
