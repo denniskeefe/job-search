@@ -4,21 +4,21 @@ import { useState, useMemo } from "react";
 import type { Job, ClearanceLevel, JobStatus, Industry } from "@/types/job";
 
 const INDUSTRY_COLORS: Record<string, string> = {
-  Cybersecurity: "bg-blue-100 text-blue-800",
-  "Finance/AML": "bg-green-100 text-green-800",
-  Nonprofit: "bg-purple-100 text-purple-800",
-  "Tech/Trust & Safety": "bg-orange-100 text-orange-800",
-  Law: "bg-amber-100 text-amber-800",
-  Media: "bg-pink-100 text-pink-800",
-  Government: "bg-gray-100 text-gray-700",
-  Other: "bg-slate-100 text-slate-700",
+  Cybersecurity: "bg-blue-900/60 text-blue-300",
+  "Finance/AML": "bg-green-900/60 text-green-300",
+  Nonprofit: "bg-purple-900/60 text-purple-300",
+  "Tech/Trust & Safety": "bg-orange-900/60 text-orange-300",
+  Law: "bg-amber-900/60 text-amber-300",
+  Media: "bg-pink-900/60 text-pink-300",
+  Government: "bg-gray-700 text-gray-300",
+  Other: "bg-slate-700 text-slate-300",
 };
 
 const CLEARANCE_COLORS: Record<string, string> = {
-  None: "bg-emerald-100 text-emerald-800",
-  Preferred: "bg-yellow-100 text-yellow-800",
-  Required: "bg-red-100 text-red-800",
-  Unknown: "bg-gray-100 text-gray-600",
+  None: "bg-emerald-900/60 text-emerald-300",
+  Preferred: "bg-yellow-900/60 text-yellow-300",
+  Required: "bg-red-900/60 text-red-300",
+  Unknown: "bg-gray-700 text-gray-400",
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -49,9 +49,9 @@ function Badge({ label, colorClass }: { label: string; colorClass: string }) {
 }
 
 function StatusDot({ status }: { status: JobStatus | null }) {
-  const color = status ? STATUS_COLORS[status] : "bg-gray-300";
+  const color = status ? STATUS_COLORS[status] : "bg-gray-600";
   return (
-    <span className="flex items-center gap-1.5 text-sm font-medium text-gray-700">
+    <span className="flex items-center gap-1.5 text-sm font-medium text-gray-300 shrink-0">
       <span className={`w-2 h-2 rounded-full ${color}`} />
       {status ?? "—"}
     </span>
@@ -61,8 +61,8 @@ function StatusDot({ status }: { status: JobStatus | null }) {
 function JobCard({ job }: { job: Job }) {
   return (
     <div
-      className={`bg-white rounded-xl border shadow-sm p-5 flex flex-col gap-3 hover:shadow-md transition-shadow ${
-        job.highInterest ? "border-amber-300" : "border-gray-200"
+      className={`bg-gray-800 rounded-xl border p-5 flex flex-col gap-3 hover:border-gray-500 transition-colors ${
+        job.highInterest ? "border-amber-500/60" : "border-gray-700"
       }`}
     >
       {/* Header */}
@@ -72,11 +72,11 @@ function JobCard({ job }: { job: Job }) {
             {job.highInterest && (
               <span className="text-amber-400 text-base leading-none" title="High interest">★</span>
             )}
-            <h3 className="font-semibold text-gray-900 text-base leading-snug">
+            <h3 className="font-semibold text-gray-100 text-base leading-snug">
               {job.jobTitle || "Untitled"}
             </h3>
           </div>
-          <p className="text-gray-500 text-sm mt-0.5">{job.company || "—"}</p>
+          <p className="text-gray-400 text-sm mt-0.5">{job.company || "—"}</p>
         </div>
         <StatusDot status={job.status} />
       </div>
@@ -84,33 +84,33 @@ function JobCard({ job }: { job: Job }) {
       {/* Badges */}
       <div className="flex flex-wrap gap-1.5">
         {job.industry && (
-          <Badge label={job.industry} colorClass={INDUSTRY_COLORS[job.industry] ?? "bg-gray-100 text-gray-700"} />
+          <Badge label={job.industry} colorClass={INDUSTRY_COLORS[job.industry] ?? "bg-gray-700 text-gray-300"} />
         )}
         {job.clearance && (
           <Badge
             label={`Clearance: ${job.clearance}`}
-            colorClass={CLEARANCE_COLORS[job.clearance] ?? "bg-gray-100 text-gray-600"}
+            colorClass={CLEARANCE_COLORS[job.clearance] ?? "bg-gray-700 text-gray-400"}
           />
         )}
         {job.location && (
-          <Badge label={job.location} colorClass="bg-slate-100 text-slate-700" />
+          <Badge label={job.location} colorClass="bg-gray-700 text-gray-300" />
         )}
       </div>
 
       {/* Dates */}
-      <div className="flex gap-4 text-xs text-gray-400">
+      <div className="flex gap-4 text-xs text-gray-500">
         <span>Found {formatDate(job.dateFound)}</span>
         {job.datePosted && <span>Posted {formatDate(job.datePosted)}</span>}
       </div>
 
       {/* Actions */}
-      <div className="flex gap-2 pt-1 border-t border-gray-100">
+      <div className="flex gap-2 pt-1 border-t border-gray-700">
         {job.jobUrl && (
           <a
             href={job.jobUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline"
+            className="text-xs font-medium text-blue-400 hover:text-blue-300 hover:underline"
           >
             Apply →
           </a>
@@ -119,7 +119,7 @@ function JobCard({ job }: { job: Job }) {
           href={job.notionUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-medium text-gray-400 hover:text-gray-600 hover:underline ml-auto"
+          className="text-xs font-medium text-gray-500 hover:text-gray-300 hover:underline ml-auto"
         >
           Notion
         </a>
@@ -145,7 +145,7 @@ function FilterSelect<T extends string>({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value as T | "all")}
-        className="text-sm font-normal text-gray-800 bg-white border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        className="text-sm font-normal text-gray-200 bg-gray-800 border border-gray-700 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <option value="all">All</option>
         {options.map((o) => (
@@ -202,12 +202,12 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
   }, [jobs]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-950">
       {/* Top bar */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <h1 className="text-xl font-bold text-gray-900">🔍 OSINT Job Tracker</h1>
+            <h1 className="text-xl font-bold text-gray-100">🔍 OSINT Job Tracker</h1>
             <p className="text-sm text-gray-500">
               {stats.total} listings · {stats.hi} high-interest · updated by scheduled agent
             </p>
@@ -221,12 +221,12 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
                 onClick={() => setStatus(status === s ? "all" : (s as JobStatus))}
                 className={`px-3 py-1 rounded-full text-xs font-semibold border transition-colors ${
                   status === s
-                    ? "bg-gray-900 text-white border-gray-900"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                    ? "bg-gray-100 text-gray-900 border-gray-100"
+                    : "bg-transparent text-gray-400 border-gray-700 hover:border-gray-500 hover:text-gray-200"
                 }`}
               >
                 <span
-                  className={`inline-block w-2 h-2 rounded-full mr-1.5 ${STATUS_COLORS[s] ?? "bg-gray-300"}`}
+                  className={`inline-block w-2 h-2 rounded-full mr-1.5 ${STATUS_COLORS[s] ?? "bg-gray-600"}`}
                 />
                 {s} ({n})
               </button>
@@ -236,7 +236,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
       </header>
 
       {/* Filters */}
-      <div className="bg-white border-b border-gray-100 shadow-sm">
+      <div className="bg-gray-900 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-end gap-4 flex-wrap">
           <label className="flex flex-col gap-1 text-xs font-medium text-gray-500 uppercase tracking-wide flex-1 min-w-48">
             Search
@@ -245,7 +245,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
               placeholder="Title or company…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="text-sm font-normal text-gray-800 bg-white border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="text-sm font-normal text-gray-200 bg-gray-800 border border-gray-700 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-600"
             />
           </label>
 
@@ -270,7 +270,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
             onChange={setLocationFilter}
           />
 
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 cursor-pointer pb-1.5">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-400 cursor-pointer pb-1.5">
             <input
               type="checkbox"
               checked={highInterestOnly}
@@ -290,7 +290,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
                 setLocationFilter("all");
                 setSearch("");
               }}
-              className="text-xs text-gray-400 hover:text-gray-700 pb-1.5 underline"
+              className="text-xs text-gray-600 hover:text-gray-300 pb-1.5 underline"
             >
               Clear filters
             </button>
@@ -301,12 +301,12 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
       {/* Results */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         {filtered.length === 0 ? (
-          <div className="text-center text-gray-400 py-24 text-lg">
+          <div className="text-center text-gray-600 py-24 text-lg">
             No jobs match the current filters.
           </div>
         ) : (
           <>
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-sm text-gray-600 mb-4">
               Showing {filtered.length} of {jobs.length} listings
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
