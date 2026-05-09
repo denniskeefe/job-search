@@ -1,0 +1,322 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import type { Job, ClearanceLevel, JobStatus, Industry } from "@/types/job";
+
+const INDUSTRY_COLORS: Record<string, string> = {
+  Cybersecurity: "bg-blue-100 text-blue-800",
+  "Finance/AML": "bg-green-100 text-green-800",
+  Nonprofit: "bg-purple-100 text-purple-800",
+  "Tech/Trust & Safety": "bg-orange-100 text-orange-800",
+  Law: "bg-amber-100 text-amber-800",
+  Media: "bg-pink-100 text-pink-800",
+  Government: "bg-gray-100 text-gray-700",
+  Other: "bg-slate-100 text-slate-700",
+};
+
+const CLEARANCE_COLORS: Record<string, string> = {
+  None: "bg-emerald-100 text-emerald-800",
+  Preferred: "bg-yellow-100 text-yellow-800",
+  Required: "bg-red-100 text-red-800",
+  Unknown: "bg-gray-100 text-gray-600",
+};
+
+const STATUS_COLORS: Record<string, string> = {
+  New: "bg-blue-500",
+  Reviewing: "bg-yellow-500",
+  Applied: "bg-green-500",
+  Interviewing: "bg-indigo-500",
+  Rejected: "bg-red-400",
+  Offer: "bg-purple-500",
+};
+
+function formatDate(iso: string | null): string {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+function Badge({ label, colorClass }: { label: string; colorClass: string }) {
+  return (
+    <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${colorClass}`}>
+      {label}
+    </span>
+  );
+}
+
+function StatusDot({ status }: { status: JobStatus | null }) {
+  const color = status ? STATUS_COLORS[status] : "bg-gray-300";
+  return (
+    <span className="flex items-center gap-1.5 text-sm font-medium text-gray-700">
+      <span className={`w-2 h-2 rounded-full ${color}`} />
+      {status ?? "—"}
+    </span>
+  );
+}
+
+function JobCard({ job }: { job: Job }) {
+  return (
+    <div
+      className={`bg-white rounded-xl border shadow-sm p-5 flex flex-col gap-3 hover:shadow-md transition-shadow ${
+        job.highInterest ? "border-amber-300" : "border-gray-200"
+      }`}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {job.highInterest && (
+              <span className="text-amber-400 text-base leading-none" title="High interest">★</span>
+            )}
+            <h3 className="font-semibold text-gray-900 text-base leading-snug">
+              {job.jobTitle || "Untitled"}
+            </h3>
+          </div>
+          <p className="text-gray-500 text-sm mt-0.5">{job.company || "—"}</p>
+        </div>
+        <StatusDot status={job.status} />
+      </div>
+
+      {/* Badges */}
+      <div className="flex flex-wrap gap-1.5">
+        {job.industry && (
+          <Badge label={job.industry} colorClass={INDUSTRY_COLORS[job.industry] ?? "bg-gray-100 text-gray-700"} />
+        )}
+        {job.clearance && (
+          <Badge
+            label={`Clearance: ${job.clearance}`}
+            colorClass={CLEARANCE_COLORS[job.clearance] ?? "bg-gray-100 text-gray-600"}
+          />
+        )}
+        {job.location && (
+          <Badge label={job.location} colorClass="bg-slate-100 text-slate-700" />
+        )}
+      </div>
+
+      {/* Dates */}
+      <div className="flex gap-4 text-xs text-gray-400">
+        <span>Found {formatDate(job.dateFound)}</span>
+        {job.datePosted && <span>Posted {formatDate(job.datePosted)}</span>}
+      </div>
+
+      {/* Actions */}
+      <div className="flex gap-2 pt-1 border-t border-gray-100">
+        {job.jobUrl && (
+          <a
+            href={job.jobUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            Apply →
+          </a>
+        )}
+        <a
+          href={job.notionUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-medium text-gray-400 hover:text-gray-600 hover:underline ml-auto"
+        >
+          Notion
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function FilterSelect<T extends string>({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: T | "all";
+  options: T[];
+  onChange: (v: T | "all") => void;
+}) {
+  return (
+    <label className="flex flex-col gap-1 text-xs font-medium text-gray-500 uppercase tracking-wide">
+      {label}
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value as T | "all")}
+        className="text-sm font-normal text-gray-800 bg-white border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
+        <option value="all">All</option>
+        {options.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+export default function JobDashboard({ jobs }: { jobs: Job[] }) {
+  const [status, setStatus] = useState<JobStatus | "all">("all");
+  const [industry, setIndustry] = useState<Industry | "all">("all");
+  const [clearance, setClearance] = useState<ClearanceLevel | "all">("all");
+  const [highInterestOnly, setHighInterestOnly] = useState(false);
+  const [locationFilter, setLocationFilter] = useState<"all" | "Remote" | "Hybrid" | "On-site">("all");
+  const [search, setSearch] = useState("");
+
+  const filtered = useMemo(() => {
+    return jobs.filter((j) => {
+      if (status !== "all" && j.status !== status) return false;
+      if (industry !== "all" && j.industry !== industry) return false;
+      if (clearance !== "all" && j.clearance !== clearance) return false;
+      if (highInterestOnly && !j.highInterest) return false;
+      if (locationFilter !== "all") {
+        const loc = j.location.toLowerCase();
+        if (locationFilter === "Remote" && !loc.startsWith("remote")) return false;
+        if (locationFilter === "Hybrid" && !loc.startsWith("hybrid")) return false;
+        if (locationFilter === "On-site" && !loc.startsWith("on-site")) return false;
+      }
+      if (search.trim()) {
+        const q = search.toLowerCase();
+        if (
+          !j.jobTitle.toLowerCase().includes(q) &&
+          !j.company.toLowerCase().includes(q)
+        )
+          return false;
+      }
+      return true;
+    });
+  }, [jobs, status, industry, clearance, highInterestOnly, locationFilter, search]);
+
+  const stats = useMemo(() => {
+    const total = jobs.length;
+    const hi = jobs.filter((j) => j.highInterest).length;
+    const byStatus = jobs.reduce<Record<string, number>>((acc, j) => {
+      const s = j.status ?? "Unknown";
+      acc[s] = (acc[s] ?? 0) + 1;
+      return acc;
+    }, {});
+    return { total, hi, byStatus };
+  }, [jobs]);
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Top bar */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4 flex-wrap">
+          <div>
+            <h1 className="text-xl font-bold text-gray-900">🔍 OSINT Job Tracker</h1>
+            <p className="text-sm text-gray-500">
+              {stats.total} listings · {stats.hi} high-interest · updated by scheduled agent
+            </p>
+          </div>
+
+          {/* Status pills */}
+          <div className="flex gap-2 flex-wrap">
+            {Object.entries(stats.byStatus).map(([s, n]) => (
+              <button
+                key={s}
+                onClick={() => setStatus(status === s ? "all" : (s as JobStatus))}
+                className={`px-3 py-1 rounded-full text-xs font-semibold border transition-colors ${
+                  status === s
+                    ? "bg-gray-900 text-white border-gray-900"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                }`}
+              >
+                <span
+                  className={`inline-block w-2 h-2 rounded-full mr-1.5 ${STATUS_COLORS[s] ?? "bg-gray-300"}`}
+                />
+                {s} ({n})
+              </button>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      {/* Filters */}
+      <div className="bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-end gap-4 flex-wrap">
+          <label className="flex flex-col gap-1 text-xs font-medium text-gray-500 uppercase tracking-wide flex-1 min-w-48">
+            Search
+            <input
+              type="text"
+              placeholder="Title or company…"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="text-sm font-normal text-gray-800 bg-white border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            />
+          </label>
+
+          <FilterSelect
+            label="Industry"
+            value={industry}
+            options={["Cybersecurity", "Finance/AML", "Nonprofit", "Tech/Trust & Safety", "Law", "Media", "Government", "Other"]}
+            onChange={setIndustry}
+          />
+
+          <FilterSelect
+            label="Clearance"
+            value={clearance}
+            options={["None", "Preferred", "Required", "Unknown"]}
+            onChange={setClearance}
+          />
+
+          <FilterSelect
+            label="Location"
+            value={locationFilter}
+            options={["Remote", "Hybrid", "On-site"]}
+            onChange={setLocationFilter}
+          />
+
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 cursor-pointer pb-1.5">
+            <input
+              type="checkbox"
+              checked={highInterestOnly}
+              onChange={(e) => setHighInterestOnly(e.target.checked)}
+              className="w-4 h-4 rounded accent-amber-400"
+            />
+            ★ High-interest only
+          </label>
+
+          {(status !== "all" || industry !== "all" || clearance !== "all" || highInterestOnly || locationFilter !== "all" || search) && (
+            <button
+              onClick={() => {
+                setStatus("all");
+                setIndustry("all");
+                setClearance("all");
+                setHighInterestOnly(false);
+                setLocationFilter("all");
+                setSearch("");
+              }}
+              className="text-xs text-gray-400 hover:text-gray-700 pb-1.5 underline"
+            >
+              Clear filters
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Results */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        {filtered.length === 0 ? (
+          <div className="text-center text-gray-400 py-24 text-lg">
+            No jobs match the current filters.
+          </div>
+        ) : (
+          <>
+            <p className="text-sm text-gray-400 mb-4">
+              Showing {filtered.length} of {jobs.length} listings
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filtered.map((job) => (
+                <JobCard key={job.id} job={job} />
+              ))}
+            </div>
+          </>
+        )}
+      </main>
+    </div>
+  );
+}
