@@ -7,7 +7,7 @@ An automated daily job search agent that finds remote OSINT/Intelligence Analyst
 Runs every day at 8:04 AM. Each run:
 
 1. Loads a deduplication log to skip already-seen listings
-2. Searches 10+ job boards and runs broad web queries
+2. Searches 12+ job boards and runs broad web queries
 3. Extracts and classifies each listing (location, salary, clearance, industry)
 4. Updates the deduplication log
 5. Logs new listings to a Notion database ("OSINT Job Tracker")
@@ -25,6 +25,8 @@ Runs every day at 8:04 AM. Each run:
 - BuiltIn
 - Idealist
 - USAJobs
+- ClearanceJobs
+- Hired
 - Broad web search
 
 ## Keywords
