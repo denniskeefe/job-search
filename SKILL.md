@@ -107,7 +107,6 @@ For each listing found, extract:
 - **Clearance required?** (Hard requirement / Preferred only / None / Unknown)
 
 **Filter OUT:**
-- Jobs that explicitly list a salary **below $75,000/year** (e.g. "$50,000–$65,000")
 - Any URL already present in the seen-jobs log from Step 1
 
 **Include if salary is "Not listed"** — do not exclude jobs just because no salary is shown; flag them clearly so Dennis can research compensation separately.
