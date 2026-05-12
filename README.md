@@ -33,12 +33,17 @@ Runs every day at 8:04 AM. Each run:
 
 - OSINT Analyst
 - Open Source Intelligence Analyst
+- Open Source Investigations Specialist
 - OSINT Investigator
 - OSINT Researcher
+- OSINT Specialist
 - Threat Intelligence Analyst
 - Digital Intelligence Analyst
 - Trust and Safety Analyst
+- Social Media Analyst
 - Due Diligence Analyst
+- Human Rights Investigator
+- War Crimes Investigator
 
 ## Filters
 

@@ -20,12 +20,17 @@ If the file does not exist, treat the seen-jobs list as empty and create the fil
 
 Search each of the following URLs. For each board, also try keyword variations beyond just "OSINT Analyst" — include:
 - `"Open Source Intelligence Analyst"`
+- `"Open Source Investigations Specialist"`
 - `"OSINT Investigator"`
 - `"OSINT Researcher"`
+- `"OSINT Specialist"`
 - `"Threat Intelligence Analyst"`
 - `"Digital Intelligence Analyst"`
 - `"Trust and Safety Analyst"`
+- `"Social Media Analyst"`
 - `"Due Diligence Analyst"`
+- `"Human Rights Investigator"`
+- `"War Crimes Investigator"`
 
 ### Job Boards to Search:
 
