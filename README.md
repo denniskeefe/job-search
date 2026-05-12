@@ -47,9 +47,10 @@ Runs every day at 8:04 AM. Each run:
 
 ## Filters
 
-- **Excluded:** jobs requiring active US security clearance (TS, TS/SCI, Secret, etc.)
-- **Excluded:** jobs outside the USA
+- **Excluded:** jobs that explicitly list a salary below $75,000/year
 - **Included:** remote, hybrid, and on-site roles — each listing is labeled with its location type
+- **Included:** all clearance levels (None, Preferred, Required) — clearance status is logged per listing
+- **Included:** USA and international roles — location is logged per listing
 
 ## Location Labels
 

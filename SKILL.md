@@ -83,7 +83,7 @@ Search each of the following URLs. For each board, also try keyword variations b
     - https://hired.com/q-threat-intelligence-analyst-jobs
 
 13. **Broad web search** — run these queries:
-    - `"OSINT Analyst" remote USA job "$75,000" OR "$80,000" OR "$90,000" OR "$100,000" posted this week -clearance`
+    - `"OSINT Analyst" remote job "$75,000" OR "$80,000" OR "$90,000" OR "$100,000" posted this week`
     - `"threat intelligence analyst" remote USA salary 75000 site:builtin.com OR site:glassdoor.com`
     - `"open source intelligence" analyst remote job nonprofit OR NGO USA salary 2025`
 
@@ -107,8 +107,6 @@ For each listing found, extract:
 - **Clearance required?** (Hard requirement / Preferred only / None / Unknown)
 
 **Filter OUT:**
-- Any job with active US security clearance (TS, TS/SCI, Secret, etc.) as a hard requirement
-- Jobs outside the USA
 - Jobs that explicitly list a salary **below $75,000/year** (e.g. "$50,000–$65,000")
 - Any URL already present in the seen-jobs log from Step 1
 
