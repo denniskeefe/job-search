@@ -34,11 +34,11 @@ Search each of the following URLs. For each board, also try keyword variations b
 
 ### Job Boards to Search:
 
-1. **Indeed** (salary filter applied via URL where supported)
-   - https://www.indeed.com/jobs?q=OSINT+Analyst+%2475%2C000&l=Remote&fromage=3
-   - https://www.indeed.com/jobs?q=%22Open+Source+Intelligence%22&l=Remote&fromage=3&salaryType=yearly&salary=%2475%2C000
-   - https://www.indeed.com/jobs?q=%22Threat+Intelligence+Analyst%22&l=Remote&fromage=3&salaryType=yearly&salary=%2475%2C000
-   - https://www.indeed.com/jobs?q=%22Trust+and+Safety+Analyst%22&l=Remote&fromage=3&salaryType=yearly&salary=%2475%2C000
+1. **Indeed**
+   - https://www.indeed.com/jobs?q=OSINT+Analyst&l=Remote&fromage=3
+   - https://www.indeed.com/jobs?q=%22Open+Source+Intelligence%22&l=Remote&fromage=3
+   - https://www.indeed.com/jobs?q=%22Threat+Intelligence+Analyst%22&l=Remote&fromage=3
+   - https://www.indeed.com/jobs?q=%22Trust+and+Safety+Analyst%22&l=Remote&fromage=3
 
 2. **LinkedIn**
    - https://www.linkedin.com/jobs/search/?keywords=OSINT%20Analyst&location=United%20States&f_WT=2&f_TPR=r259200&f_SB2=2
@@ -46,8 +46,8 @@ Search each of the following URLs. For each board, also try keyword variations b
    - https://www.linkedin.com/jobs/search/?keywords=Open%20Source%20Intelligence&location=United%20States&f_WT=2&f_TPR=r259200&f_SB2=2
 
 3. **ZipRecruiter**
-   - https://www.ziprecruiter.com/jobs-search?search=OSINT+Analyst&location=Remote&min_salary=75000
-   - https://www.ziprecruiter.com/jobs-search?search=Threat+Intelligence+Analyst&location=Remote&min_salary=75000
+   - https://www.ziprecruiter.com/jobs-search?search=OSINT+Analyst&location=Remote
+   - https://www.ziprecruiter.com/jobs-search?search=Threat+Intelligence+Analyst&location=Remote
 
 4. **Dice** (tech-focused)
    - https://www.dice.com/jobs?q=OSINT+Analyst&location=Remote&radius=30&radiusUnit=mi&page=1&pageSize=20&filters.postedDate=THREE&filters.employmentType=FULLTIME
@@ -83,9 +83,9 @@ Search each of the following URLs. For each board, also try keyword variations b
     - https://hired.com/q-threat-intelligence-analyst-jobs
 
 13. **Broad web search** — run these queries:
-    - `"OSINT Analyst" remote job "$75,000" OR "$80,000" OR "$90,000" OR "$100,000" posted this week`
-    - `"threat intelligence analyst" remote USA salary 75000 site:builtin.com OR site:glassdoor.com`
-    - `"open source intelligence" analyst remote job nonprofit OR NGO USA salary 2025`
+    - `"OSINT Analyst" remote job posted this week`
+    - `"threat intelligence analyst" remote USA site:builtin.com OR site:glassdoor.com`
+    - `"open source intelligence" analyst remote job nonprofit OR NGO USA`
 
 ---
 
