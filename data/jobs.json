@@ -292,5 +292,61 @@
     "clearance": "None",
     "status": "New",
     "jobUrl": "https://job-boards.greenhouse.io/anthropic/jobs/5114931008"
+  },
+  {
+    "id": "zerofox-intelligence-analyst-2026-05-11",
+    "jobTitle": "Intelligence Analyst",
+    "company": "ZeroFox",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$60,000 – $80,000",
+    "datePosted": "2026-05-11",
+    "dateFound": "2026-05-12",
+    "highInterest": false,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://remotive.com/remote/jobs/all-others/intelligence-analyst-4642498"
+  },
+  {
+    "id": "control-risks-senior-cti-analyst-2026-05-12",
+    "jobTitle": "Senior Cyber Threat Intelligence Analyst",
+    "company": "Control Risks",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$120,000 – $140,000",
+    "datePosted": null,
+    "dateFound": "2026-05-12",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://unjobs.org/vacancies/1769609345354"
+  },
+  {
+    "id": "flashpoint-intelligence-analyst-ii-2026-01-21",
+    "jobTitle": "Intelligence Analyst II",
+    "company": "Flashpoint",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": "2026-01-21",
+    "dateFound": "2026-05-12",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://jobs.ashbyhq.com/flashpoint.io/2e58c1bc-f06d-4370-a61e-5c7ea0796302"
+  },
+  {
+    "id": "flashpoint-senior-intelligence-analyst-ii-fnss-2026-05-12",
+    "jobTitle": "Senior Intelligence Analyst II (FNSS)",
+    "company": "Flashpoint",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": null,
+    "dateFound": "2026-05-12",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://jobs.ashbyhq.com/flashpoint.io/44eaf85c-595d-4960-a5b4-dfff44778bde"
   }
 ]
