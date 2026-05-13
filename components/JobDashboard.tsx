@@ -221,7 +221,7 @@ export default function JobDashboard({ jobs }: { jobs: Job[] }) {
           <div>
             <h1 className="text-xl font-bold text-gray-100">🔍 OSINT Job Tracker</h1>
             <p className="text-sm text-gray-500">
-              {stats.total} listings · {stats.hi} high-interest · updated by scheduled agent
+              {stats.total} listings · {stats.hi} high-interest · USA &amp; Canada · updated by scheduled agent
             </p>
           </div>
 

@@ -1,13 +1,13 @@
 # OSINT Analyst Job Search Routine
 
-An automated daily job search agent that finds remote OSINT/Intelligence Analyst openings in the USA, deduplicates results, logs them to Notion, and sends a Gmail digest.
+An automated daily job search agent that finds remote OSINT/Intelligence Analyst openings in the **USA and Canada**, deduplicates results, logs them to Notion, and sends a Gmail digest.
 
 ## What It Does
 
 Runs every day at 8:04 AM. Each run:
 
 1. Loads a deduplication log to skip already-seen listings
-2. Searches 12+ job boards and runs broad web queries
+2. Searches 14+ job boards and runs broad web queries (USA and Canada)
 3. Extracts and classifies each listing (location, salary, clearance, industry)
 4. Updates the deduplication log
 5. Logs new listings to a Notion database ("OSINT Job Tracker")
@@ -15,19 +15,20 @@ Runs every day at 8:04 AM. Each run:
 
 ## Job Boards Searched
 
-- Indeed
-- LinkedIn
+- Indeed (USA + Canada)
+- LinkedIn (USA + Canada)
 - ZipRecruiter
 - Dice
 - Glassdoor
 - We Work Remotely
 - Remote.co
 - BuiltIn
-- Idealist
+- Idealist (USA + Canada)
 - USAJobs
+- Job Bank Canada
 - ClearanceJobs
 - Hired
-- Broad web search
+- Broad web search (USA + Canada queries)
 
 ## Keywords
 
@@ -50,14 +51,15 @@ Runs every day at 8:04 AM. Each run:
 - **Included:** all salary levels — salary is logged per listing where available
 - **Included:** remote, hybrid, and on-site roles — each listing is labeled with its location type
 - **Included:** all clearance levels (None, Preferred, Required) — clearance status is logged per listing
-- **Included:** USA and international roles — location is logged per listing
+- **Coverage:** USA and Canada
 
 ## Location Labels
 
 Each listing is classified as:
-- `Remote` — fully remote
-- `Hybrid — [State]` — mix of remote and in-office
-- `On-site — [State]` — in-office required
+- `Remote` — fully remote, open to USA and/or Canada
+- `Remote — CA` — fully remote but restricted to Canadian residents
+- `Hybrid — [State/Province]` — mix of remote and in-office (e.g. `Hybrid — VA`, `Hybrid — ON`)
+- `On-site — [State/Province]` — in-office required (e.g. `On-site — TX`, `On-site — BC`)
 - `Unknown` — location not clearly stated
 
 ## High-Interest Flag (⭐)

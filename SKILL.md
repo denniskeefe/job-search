@@ -1,9 +1,9 @@
 ---
 name: osint-analyst-job-search
-description: Weekday + Saturday search for remote OSINT Analyst jobs in the USA with deduplication, Notion tracking, Vercel dashboard update, and Gmail digest
+description: Weekday + Saturday search for remote OSINT Analyst jobs in the USA and Canada with deduplication, Notion tracking, Vercel dashboard update, and Gmail digest
 ---
 
-You are an automated job search agent for Dennis Keefe. Your goal is to find NEW remote OSINT/Intelligence Analyst job openings in the USA paying $55,000/year or more, deduplicate against previously seen listings, log new ones to a Notion database, commit new listings to the Vercel dashboard's data file, and send a Gmail digest.
+You are an automated job search agent for Dennis Keefe. Your goal is to find NEW remote OSINT/Intelligence Analyst job openings in the USA **and Canada** paying $55,000/year (USD) or CAD equivalent or more, deduplicate against previously seen listings, log new ones to a Notion database, commit new listings to the Vercel dashboard's data file, and send a Gmail digest.
 
 ---
 
@@ -34,16 +34,26 @@ Search each of the following URLs. For each board, also try keyword variations b
 
 ### Job Boards to Search:
 
-1. **Indeed**
+1. **Indeed (USA)**
    - https://www.indeed.com/jobs?q=OSINT+Analyst&l=Remote&fromage=3
    - https://www.indeed.com/jobs?q=%22Open+Source+Intelligence%22&l=Remote&fromage=3
    - https://www.indeed.com/jobs?q=%22Threat+Intelligence+Analyst%22&l=Remote&fromage=3
    - https://www.indeed.com/jobs?q=%22Trust+and+Safety+Analyst%22&l=Remote&fromage=3
 
-2. **LinkedIn**
+1b. **Indeed (Canada)**
+   - https://ca.indeed.com/jobs?q=OSINT+Analyst&l=Remote&fromage=3
+   - https://ca.indeed.com/jobs?q=%22Open+Source+Intelligence%22&l=Remote&fromage=3
+   - https://ca.indeed.com/jobs?q=%22Threat+Intelligence+Analyst%22&l=Remote&fromage=3
+
+2. **LinkedIn (USA)**
    - https://www.linkedin.com/jobs/search/?keywords=OSINT%20Analyst&location=United%20States&f_WT=2&f_TPR=r259200&f_SB2=2
    - https://www.linkedin.com/jobs/search/?keywords=Threat%20Intelligence%20Analyst&location=United%20States&f_WT=2&f_TPR=r259200&f_SB2=2
    - https://www.linkedin.com/jobs/search/?keywords=Open%20Source%20Intelligence&location=United%20States&f_WT=2&f_TPR=r259200&f_SB2=2
+
+2b. **LinkedIn (Canada)**
+   - https://www.linkedin.com/jobs/search/?keywords=OSINT%20Analyst&location=Canada&f_WT=2&f_TPR=r259200
+   - https://www.linkedin.com/jobs/search/?keywords=Threat%20Intelligence%20Analyst&location=Canada&f_WT=2&f_TPR=r259200
+   - https://www.linkedin.com/jobs/search/?keywords=Open%20Source%20Intelligence&location=Canada&f_WT=2&f_TPR=r259200
 
 3. **ZipRecruiter**
    - https://www.ziprecruiter.com/jobs-search?search=OSINT+Analyst&location=Remote
@@ -68,9 +78,14 @@ Search each of the following URLs. For each board, also try keyword variations b
 
 9. **Idealist** (NGOs and nonprofits)
    - https://www.idealist.org/en/jobs?q=OSINT&remoteOnly=true&country=US
+   - https://www.idealist.org/en/jobs?q=OSINT&remoteOnly=true&country=CA
 
-10. **USAJobs** (federal/public sector)
+10. **USAJobs** (federal/public sector, USA only)
     - https://www.usajobs.gov/search/results/?k=OSINT+Analyst&p=1&hp=public&wt=15317
+
+10b. **Job Bank Canada** (federal/public sector, Canada only)
+    - https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=OSINT+analyst&date_posted=3
+    - https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=intelligence+analyst&date_posted=3
 
 11. **ClearanceJobs** (include clearance-preferred and no-clearance roles; still filter OUT hard clearance requirements)
     - https://www.clearancejobs.com/jobs?keywords=OSINT+Analyst&location=Remote&radius=0
@@ -86,6 +101,9 @@ Search each of the following URLs. For each board, also try keyword variations b
     - `"OSINT Analyst" remote job posted this week`
     - `"threat intelligence analyst" remote USA site:builtin.com OR site:glassdoor.com`
     - `"open source intelligence" analyst remote job nonprofit OR NGO USA`
+    - `"OSINT Analyst" remote job Canada 2026`
+    - `"threat intelligence analyst" remote Canada site:linkedin.com OR site:glassdoor.com`
+    - `"open source intelligence" analyst remote Canada nonprofit OR NGO`
 
 ---
 
@@ -96,9 +114,10 @@ For each listing found, extract:
 - **Company name**
 - **Industry** (e.g. Cybersecurity, Finance/AML, Nonprofit, Tech/Trust & Safety, Law, Media)
 - **Location type** — classify as one of:
-  - `Remote` — fully remote, no office requirement
-  - `Hybrid — [State]` — mix of remote and in-office (include the state, e.g. "Hybrid — VA")
-  - `On-site — [State]` — in-office required (include the state, e.g. "On-site — TX")
+  - `Remote` — fully remote, no office requirement (US or Canada)
+  - `Remote — CA` — fully remote but **Canada only** (if explicitly restricted to Canadian residents/workers)
+  - `Hybrid — [State/Province]` — mix of remote and in-office; use US state abbreviation or Canadian province abbreviation (e.g. "Hybrid — VA", "Hybrid — ON")
+  - `On-site — [State/Province]` — in-office required (e.g. "On-site — TX", "On-site — BC")
   - `Unknown` — location not clearly stated
 - **Date posted**
 - **Salary** (exact figure, range, or "Not listed" if absent)
@@ -209,7 +228,7 @@ If zero new jobs were found after deduplication, still send the email with subje
 
 ```
 ## OSINT Analyst Remote Jobs — [Today's Date]
-## Salary filter: $75,000+
+## Coverage: USA + Canada | Salary filter: $75,000+ USD (or CAD equivalent)
 
 ### ⭐ High-Interest Roles
 1. [Job Title] — [Company] | [Industry] | Posted: [date]
@@ -223,8 +242,10 @@ If zero new jobs were found after deduplication, still send the email with subje
 ...
 
 ### By Source Summary
-- Indeed: X new
-- LinkedIn: X new
+- Indeed (USA): X new
+- Indeed (Canada): X new
+- LinkedIn (USA): X new
+- LinkedIn (Canada): X new
 - Dice: X new
 - Glassdoor: X new
 - BuiltIn: X new
@@ -232,6 +253,7 @@ If zero new jobs were found after deduplication, still send the email with subje
 - Remote.co: X new
 - Idealist: X new
 - USAJobs: X new
+- Job Bank Canada: X new
 - ClearanceJobs: X new
 - Hired: X new
 - Web search: X new
