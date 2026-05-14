@@ -460,5 +460,47 @@
     "clearance": "None",
     "status": "New",
     "jobUrl": "https://jobs.ashbyhq.com/tenex/a0458ccb-be64-43c8-bf1c-4f500570f771"
+  },
+  {
+    "id": "q6cyber-fraud-threat-intelligence-analyst-2026-05-14",
+    "jobTitle": "Fraud Threat Intelligence Analyst",
+    "company": "Q6 Cyber",
+    "industry": "Finance/AML",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": "2026-05-14",
+    "dateFound": "2026-05-14",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.indeed.com/viewjob?jk=e0d3bad98b659366"
+  },
+  {
+    "id": "insight-global-threat-intelligence-analyst-canada-2026-05-13",
+    "jobTitle": "Threat Intelligence Analyst (Insider Threat Analyst)",
+    "company": "Insight Global",
+    "industry": "Cybersecurity",
+    "location": "Remote — CA",
+    "salary": "CA$57–$60/hr",
+    "datePosted": "2026-05-13",
+    "dateFound": "2026-05-14",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://ca.linkedin.com/jobs/view/threat-intelligence-analyst-at-insight-global-4413569560"
+  },
+  {
+    "id": "lexisnexis-sr-fraud-data-analyst-2026-05-14",
+    "jobTitle": "Sr. Fraud Data Analyst",
+    "company": "LexisNexis Risk Solutions",
+    "industry": "Finance/AML",
+    "location": "Remote",
+    "salary": "$78,800 – $157,500",
+    "datePosted": "2026-05-14",
+    "dateFound": "2026-05-14",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.indeed.com/viewjob?jk=46e17cee6da827ff"
   }
 ]
