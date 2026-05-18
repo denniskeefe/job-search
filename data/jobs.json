@@ -642,5 +642,61 @@
     "clearance": "Unknown",
     "status": "New",
     "jobUrl": "https://ca.linkedin.com/jobs/view/threat-intelligence-analyst-at-atkinsr%C3%A9alis-4409904907"
+  },
+  {
+    "id": "alignerr-threat-intelligence-analyst-ai-training-2026-05-18",
+    "jobTitle": "Threat Intelligence Analyst (AI Training)",
+    "company": "Alignerr",
+    "industry": "Tech/Trust & Safety",
+    "location": "Remote",
+    "salary": "$35 – $60/hr (contract)",
+    "datePosted": "2026-05-18",
+    "dateFound": "2026-05-18",
+    "highInterest": false,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/threat-intelligence-analyst-at-alignerr-4416074133"
+  },
+  {
+    "id": "constellation-osint-data-entry-analyst-2026-05-18",
+    "jobTitle": "OSINT Data Entry Analyst",
+    "company": "Constellation Inc",
+    "industry": "Government",
+    "location": "Remote",
+    "salary": "$65,000 – $70,000",
+    "datePosted": null,
+    "dateFound": "2026-05-18",
+    "highInterest": false,
+    "clearance": "Required",
+    "status": "New",
+    "jobUrl": "https://www.indeed.com/viewjob?jk=8a4243d578185f87"
+  },
+  {
+    "id": "crossing-hurdles-strategic-intelligence-analyst-canada-2026-05-18",
+    "jobTitle": "Strategic Intelligence Analyst (Geopolitics Forecaster)",
+    "company": "Crossing Hurdles",
+    "industry": "Other",
+    "location": "Remote (Canada)",
+    "salary": "CAD $105 – $125/hr (contract, 10–20 hrs/week)",
+    "datePosted": "2026-05-04",
+    "dateFound": "2026-05-18",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://ca.linkedin.com/jobs/view/strategic-intelligence-analyst-remote-at-crossing-hurdles-4395971935"
+  },
+  {
+    "id": "ebay-senior-analyst-security-intelligence-2026-05-15",
+    "jobTitle": "Senior Analyst – Security & Geopolitical Intelligence",
+    "company": "eBay",
+    "industry": "Tech/Trust & Safety",
+    "location": "Hybrid — UT",
+    "salary": "$85,000 – $105,000",
+    "datePosted": "2026-05-15",
+    "dateFound": "2026-05-18",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://jobs.ebayinc.com/us/en/job/EBAEBAUSR0072274EXTERNALENUS/Senior-Analyst"
   }
 ]
