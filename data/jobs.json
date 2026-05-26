@@ -1202,5 +1202,61 @@
     "clearance": "None",
     "status": "New",
     "jobUrl": "https://www.linkedin.com/jobs/view/threat-intelligence-analyst-associate-at-sentinel-technologies-4416575604"
+  },
+  {
+    "id": "cisco-senior-threat-intel-analyst-2026-05-26",
+    "jobTitle": "Senior Threat Intel Analyst",
+    "company": "Cisco",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$128,400 – $172,300",
+    "datePosted": "2026-05-12",
+    "dateFound": "2026-05-26",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://remotive.com/remote/jobs/all-others/senior-threat-intel-analyst-4476719"
+  },
+  {
+    "id": "cyberfocusai-cti-analyst-onsite-fl-2026-05-26",
+    "jobTitle": "Cyber Threat Intelligence Analyst",
+    "company": "Cyber Focus AI",
+    "industry": "Cybersecurity",
+    "location": "On-site — FL",
+    "salary": "$120,000 – $140,000",
+    "datePosted": "2026-05-26",
+    "dateFound": "2026-05-26",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/cyber-threat-intelligence-analyst-at-cyber-focus-ai-4408377101"
+  },
+  {
+    "id": "alignerr-threat-intelligence-analyst-ai-training-2026-05-26",
+    "jobTitle": "Threat Intelligence Analyst (AI Training)",
+    "company": "Alignerr",
+    "industry": "Tech/Trust & Safety",
+    "location": "Remote",
+    "salary": "$35 – $60/hr (contract)",
+    "datePosted": "2026-05-26",
+    "dateFound": "2026-05-26",
+    "highInterest": false,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/threat-intelligence-analyst-at-alignerr-4419112397"
+  },
+  {
+    "id": "cfocus-hud-cti-manager-2026-05-26",
+    "jobTitle": "HUD Cyber Security Threat Intelligence Manager",
+    "company": "cFocus Software Incorporated",
+    "industry": "Government",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": null,
+    "dateFound": "2026-05-26",
+    "highInterest": false,
+    "clearance": "Required",
+    "status": "New",
+    "jobUrl": "https://himalayas.app/companies/cfocus-software-incorporated/jobs/hud-cyber-security-threat-intelligence-manager"
   }
 ]
