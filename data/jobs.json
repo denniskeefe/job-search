@@ -1496,5 +1496,47 @@
     "clearance": "None",
     "status": "New",
     "jobUrl": "https://www.dice.com/job-detail/7f5604ad-c4fa-427b-8a37-631154a80190"
+  },
+  {
+    "id": "huntress-staff-threat-intelligence-analyst-2026-05-29",
+    "jobTitle": "Staff Threat Intelligence Analyst",
+    "company": "Huntress",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$190,000 – $210,000 + bonus + equity",
+    "datePosted": null,
+    "dateFound": "2026-05-29",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://job-boards.greenhouse.io/huntress/jobs/7748575003"
+  },
+  {
+    "id": "huntress-principal-threat-intelligence-analyst-2026-05-29",
+    "jobTitle": "Principal Threat Intelligence Analyst",
+    "company": "Huntress",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$200,000 – $225,000 + bonus + equity",
+    "datePosted": null,
+    "dateFound": "2026-05-29",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://job-boards.greenhouse.io/huntress/jobs/7720002003"
+  },
+  {
+    "id": "sentilink-fraud-intelligence-analyst-ashby-2026-05-29",
+    "jobTitle": "Fraud Intelligence Analyst",
+    "company": "SentiLink",
+    "industry": "Finance/AML",
+    "location": "Remote",
+    "salary": "$110,000 – $120,000",
+    "datePosted": null,
+    "dateFound": "2026-05-29",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://jobs.ashbyhq.com/sentilink/1ad0246a-eecf-4458-8e8d-75de18eec934"
   }
 ]
