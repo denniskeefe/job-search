@@ -1762,5 +1762,61 @@
     "clearance": "None",
     "status": "New",
     "jobUrl": "https://www.linkedin.com/jobs/view/russia-researcher-at-institute-for-the-study-of-war-4264769434"
+  },
+  {
+    "id": "remotehunter-fraud-analyst-cti-osint-2026-06-03",
+    "jobTitle": "Fraud Analyst (CTI/OSINT Analyst)",
+    "company": "RemoteHunter (Cybersecurity Client)",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$78,500 – $117,500",
+    "datePosted": "2026-06-03",
+    "dateFound": "2026-06-03",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/fraud-analyst-at-remotehunter-4424081206"
+  },
+  {
+    "id": "catchprobe-technical-research-analyst-2026-06-01",
+    "jobTitle": "Technical Research Analyst (OSINT)",
+    "company": "CatchProbe Intelligence Technologies",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": "2026-06-01",
+    "dateFound": "2026-06-03",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/technical-research-analyst-at-catchprobe-intelligence-technologies-4421614680"
+  },
+  {
+    "id": "gofundme-trust-safety-analyst-ii-2026-06-03",
+    "jobTitle": "Trust & Safety Analyst II",
+    "company": "GoFundMe",
+    "industry": "Tech/Trust & Safety",
+    "location": "Remote",
+    "salary": "$66,500 – $99,500",
+    "datePosted": null,
+    "dateFound": "2026-06-03",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://job-boards.greenhouse.io/gofundme/jobs/7284175"
+  },
+  {
+    "id": "alignerr-threat-intelligence-analyst-chicago-2026-06-03",
+    "jobTitle": "Threat Intelligence Analyst (AI Training — Contract)",
+    "company": "Alignerr",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": "$35 – $60/hr (contract)",
+    "datePosted": "2026-06-03",
+    "dateFound": "2026-06-03",
+    "highInterest": false,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/threat-intelligence-analyst-at-alignerr-4422651338"
   }
 ]
