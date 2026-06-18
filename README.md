@@ -1,3 +1,4 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/denniskeefe)
 # OSINT Analyst Job Search Routine
 
 An automated daily job search agent that finds remote OSINT/Intelligence Analyst openings in the **USA and Canada**, deduplicates results, logs them to Notion, and sends a Gmail digest.
