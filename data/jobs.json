@@ -5486,5 +5486,61 @@
     "clearance": "None",
     "status": "New",
     "jobUrl": "https://www.remotive.com/job/senior-threat-intelligence-specialist-i-protective-and-geopolitical-intel/10194473"
+  },
+  {
+    "id": "gemini-analyst-compliance-investigations-2026-07-23",
+    "jobTitle": "Analyst, Compliance (Investigations)",
+    "company": "Gemini",
+    "industry": "Finance/AML",
+    "location": "Remote",
+    "salary": "$67,500 \u2013 $90,000",
+    "datePosted": "2026-07-15",
+    "dateFound": "2026-07-23",
+    "highInterest": false,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://builtin.com/job/analyst-compliance-investigations/10207672"
+  },
+  {
+    "id": "binance-investigations-specialist-2026-07-23",
+    "jobTitle": "Investigations Specialist",
+    "company": "Binance",
+    "industry": "Finance/AML",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": "2026-07-09",
+    "dateFound": "2026-07-23",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://builtin.com/job/investigations-specialist/10110251"
+  },
+  {
+    "id": "allstate-manager-insider-threat-investigations-2026-07-23",
+    "jobTitle": "Manager, Insider Threat Investigations",
+    "company": "Allstate",
+    "industry": "Finance/AML",
+    "location": "Remote",
+    "salary": "$134,000 \u2013 $196,000",
+    "datePosted": null,
+    "dateFound": "2026-07-23",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.indeed.com/viewjob?jk=cc75dfb5b234dccf"
+  },
+  {
+    "id": "vulncheck-vulnerability-threat-intelligence-analyst-2026-07-23",
+    "jobTitle": "Vulnerability & Threat Intelligence Analyst",
+    "company": "VulnCheck",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": "2026-07-22",
+    "dateFound": "2026-07-23",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://www.linkedin.com/jobs/view/vulnerability-threat-analyst-us-at-vulncheck-4443921709"
   }
 ]
