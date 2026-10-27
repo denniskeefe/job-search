@@ -1790,5 +1790,47 @@
     "clearance": "Unknown",
     "status": "New",
     "jobUrl": "https://builtin.com/job/cyber-threat-intelligence-sme-remote-contract/11892089"
+  },
+  {
+    "id": "intersec-cyber-threat-analyst-2026-10-27",
+    "jobTitle": "Cyber-Threat Analyst",
+    "company": "InterSec Inc.",
+    "industry": "Cybersecurity",
+    "location": "Remote",
+    "salary": null,
+    "datePosted": "2026-10-26",
+    "dateFound": "2026-10-27",
+    "highInterest": false,
+    "clearance": "Unknown",
+    "status": "New",
+    "jobUrl": "https://dice.com/job-detail/a82f0f83-e59a-4e56-8d7c-18f383c0d53d"
+  },
+  {
+    "id": "capps-txcc-cti-analyst-2026-10-27",
+    "jobTitle": "TXCC - CTI Analyst (Cybersecurity Analyst III-IV)",
+    "company": "CAPPS (Texas Cyber Command)",
+    "industry": "Government",
+    "location": "On-site — TX",
+    "salary": "$107,000 - $141,000/yr ($8,916.67 - $11,750.00/mo)",
+    "datePosted": "2026-10-26",
+    "dateFound": "2026-10-27",
+    "highInterest": false,
+    "clearance": "Unknown",
+    "status": "New",
+    "jobUrl": "https://dice.com/job-detail/3aecc775-a97d-4fc1-a0ff-4f3a56f4afbb"
+  },
+  {
+    "id": "knowledge-management-isr-technical-intelligence-analyst-2026-10-27",
+    "jobTitle": "ISR Technical Intelligence Analyst (TIA)",
+    "company": "Knowledge Management, Inc.",
+    "industry": "Government",
+    "location": "On-site — DC",
+    "salary": null,
+    "datePosted": "2026-10-27",
+    "dateFound": "2026-10-27",
+    "highInterest": false,
+    "clearance": "Required",
+    "status": "New",
+    "jobUrl": "https://dice.com/job-detail/8075cf53-cc75-4a85-a582-8c38fecb010d"
   }
 ]
