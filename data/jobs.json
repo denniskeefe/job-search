@@ -1748,5 +1748,33 @@
     "clearance": "Required",
     "status": "New",
     "jobUrl": "https://clearancejobs.com/jobs/9300255/osintpai-targeting-analyst-expert-language-enabled-mandarin"
+  },
+  {
+    "id": "tiktok-usds-influence-operations-intelligence-analyst-2026-11-13",
+    "jobTitle": "Intelligence Analyst - Influence Operations Intelligence & Discovery",
+    "company": "TikTok USDS Joint Venture",
+    "industry": "Tech/Trust & Safety",
+    "location": "On-site — DC",
+    "salary": "$88,920 - $176,400",
+    "datePosted": "2026-11-10",
+    "dateFound": "2026-11-13",
+    "highInterest": true,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://linkedin.com/jobs/view/intelligence-analyst-influence-operations-intelligence-discovery-at-tiktok-usds-joint-venture-4489118763"
+  },
+  {
+    "id": "constellation-open-source-investigator-digital-research-analyst-2026-11-13",
+    "jobTitle": "Open Source Investigator/Digital Research Analyst",
+    "company": "Constellation Inc",
+    "industry": "Government",
+    "location": "Remote",
+    "salary": "$80,000 - $90,000",
+    "datePosted": "2026-11-09",
+    "dateFound": "2026-11-13",
+    "highInterest": false,
+    "clearance": "None",
+    "status": "New",
+    "jobUrl": "https://linkedin.com/jobs/view/open-source-investigator-digital-research-analyst-at-constellation-inc-4487155677"
   }
 ]
